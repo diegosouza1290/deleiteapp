@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>Editar Cadastro</ion-title>
+
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<form #form="ngForm" (ngSubmit)="salvar(form)">
+
+			<ion-item>
+				<ion-label floating>Lote</ion-label>
+				<ion-input type="text" name="lote" [(ngModel)]="producao.lote"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Litros de Leite</ion-label>
+				<ion-input type="text" name="litroleite" [(ngModel)]="producao.litroleite"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<button ion-button outline block>Salvar</button>
+			</ion-item>
+
+		</form>
+
+	</ion-list>
+</ion-content>

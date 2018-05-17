@@ -1,0 +1,41 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-buttons end>
+			<button ion-button icon-only (click)="cadastrodespesas()">
+			<ion-icon name="add"></ion-icon>
+      </button>
+		</ion-buttons>
+		<ion-title>Despesas</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-item *ngFor="let despesas of lista | async" (click)="editardespesas(despesas.id)">
+
+			<h2>Despesa: {{despesas.despesa}}</h2>
+			<table id="tabelaspec">
+				<tr>
+					<td>
+						<p *ngIf="despesas.descricaodp">Descrição: {{despesas.descricaodp}}</p>
+						<p *ngIf="!despesas.descricaodp">Descrição: (Não Cadastrada)</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p *ngIf="despesas.valor">Valor: R$ {{despesas.valor}}</p>
+						<p *ngIf="!despesas.valor">Descrição: (Não Cadastrado)</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p *ngIf="despesas.data" displayFormat="DD/MM/YYYY">Data: {{despesas.data}}</p>
+					</td>
+				</tr>
+
+			</table>
+		</ion-item>
+
+	</ion-list>
+</ion-content>

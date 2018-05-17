@@ -1,0 +1,42 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-buttons end>
+			<button ion-button icon-only (click)="cadastropropriedade()">
+			<ion-icon name="add"></ion-icon>
+      </button>
+		</ion-buttons>
+		<ion-title>Minhas Propriedades</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-item *ngFor="let propriedade of lista | async" (click)="editarpropriedade(propriedade.id)">
+
+			<h2>Propriedade: {{propriedade.propriedadenome}}</h2>
+			<table>
+				<tr>
+					<td>
+						<p *ngIf="propriedade.responsavel">Responsável: {{propriedade.responsavel}}</p>
+						<p *ngIf="!propriedade.responsavel">Responsável: (Não Cadastrada)</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p *ngIf="propriedade.municipio">Município: {{propriedade.municipio}}</p>
+						<p *ngIf="!propriedade.municipio">Município: (Não Cadastrado)</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p *ngIf="propriedade.area">Área: {{propriedade.area}} ha</p>
+						<p *ngIf="!propriedade.area">Área: (Não Cadastrada)</p>
+					</td>
+				</tr>
+			</table>
+		</ion-item>
+
+	</ion-list>
+
+</ion-content>

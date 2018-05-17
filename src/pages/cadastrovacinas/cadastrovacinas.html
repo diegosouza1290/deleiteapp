@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>Cadastrar Vacina</ion-title>
+
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<form #form="ngForm" (ngSubmit)="salvar(form)">
+
+			<ion-item>
+				<ion-label floating>Vacina</ion-label>
+				<ion-input type="text" name="descricaovm" ngModel></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Tipo</ion-label>
+				<ion-input type="text" name="tipo" ngModel></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<button ion-button outline block>Salvar</button>
+			</ion-item>
+
+		</form>
+
+	</ion-list>
+</ion-content>

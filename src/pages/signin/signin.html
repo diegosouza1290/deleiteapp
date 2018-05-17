@@ -1,0 +1,46 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title text-center>
+			DeLeiteApp
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	<form #form="ngForm" novalidate>
+		<ion-list>
+
+			<ion-item>
+				<ion-label floating>E-mail</ion-label>
+				<ion-input type="text" name="email" [(ngModel)]="user.email" #email="ngModel" required></ion-input>
+			</ion-item>
+			<ion-item *ngIf="email.errors && (email.dirty || email.touched)" class="text-secondary">
+				O campo é obrigatório
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Senha</ion-label>
+				<ion-input type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+			</ion-item>
+			<ion-item *ngIf="password.errors && (password.dirty || password.touched)" class="text-secondary">
+				O campo é obrigatório
+			</ion-item>
+
+		</ion-list>
+
+		<button ion-button block color="secondary" [disabled]="!form.form.valid" (click)="signIn()">
+      Entrar
+    </button>
+	</form>
+
+	<button ion-button block clear color="secondary"  (click)="resetPassword()">
+    Esqueci minha senha
+  </button>
+
+	<button ion-button block clear color="secondary" (click)="createAccount()">
+    Criar Conta
+  </button>
+
+</ion-content>

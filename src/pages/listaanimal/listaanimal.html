@@ -1,0 +1,29 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-buttons end>
+			<button ion-button icon-only (click)="cadastroanimal()">
+			<ion-icon name="add"></ion-icon>
+      </button>
+		</ion-buttons>
+		<ion-title align="center">Minhas Vacas</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-item *ngFor="let animal of lista | async" (click)="editaranimal(animal.id)">
+
+			<h2>Nome do Animal: {{animal.nome}}</h2>
+
+			<p *ngIf="animal.categoria">Estágio: {{animal.categoria}}</p>
+			<p *ngIf="!animal.categoria">Estágio: (Não Cadastrado)</p>
+
+			<p *ngIf="animal.raca">Raça: {{animal.raca}}</p>
+			<p *ngIf="!animal.raca">Raça: (Não Cadastrada)</p>
+
+		</ion-item>
+
+	</ion-list>
+
+</ion-content>

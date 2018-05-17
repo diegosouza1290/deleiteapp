@@ -1,0 +1,20 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-buttons end>
+			<button ion-button icon-only (click)="cadastrocategoria()">
+			<ion-icon name="add"></ion-icon>
+      </button>
+		</ion-buttons>
+		<ion-title>Estágios</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-item *ngFor="let categoria of lista | async" (click)="editarcategoria(categoria.id)">
+			<h2>Estágio: {{categoria.descricaocategoria}}</h2>
+		</ion-item>
+
+	</ion-list>
+</ion-content>

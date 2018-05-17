@@ -1,0 +1,57 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>Editar Cadastro</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<form #form="ngForm" (ngSubmit)="salvar(form)">
+
+			<ion-item>
+				<ion-label floating>Nome</ion-label>
+				<ion-input type="text" [(ngModel)]="animal.nome" name="nome"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Data de Nascimento</ion-label>
+				<ion-datetime type="date" name="nascimento" displayFormat="DD/MM/YYYY" [(ngModel)]="animal.nascimento"></ion-datetime>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Lote</ion-label>
+				<ion-select name="lote" [(ngModel)]="animal.lote">
+					<ion-option *ngFor="let lote of lotes | async" [value]="lote.descricaolote">{{lote.descricaolote}}</ion-option>
+				</ion-select>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Raça</ion-label>
+				<ion-select name="raca" [(ngModel)]="animal.raca">
+					<ion-option *ngFor="let raca of racas | async" [value]="raca.descricaoraca">{{raca.descricaoraca}}</ion-option>
+				</ion-select>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Estágio</ion-label>
+				<ion-select name="categoria" [(ngModel)]="animal.categoria">
+					<ion-option *ngFor="let categoria of categorias | async" [value]="categoria.descricaocategoria">{{categoria.descricaocategoria}}</ion-option>
+				</ion-select>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Propriedade</ion-label>
+				<ion-select name="propriedade" [(ngModel)]="animal.propriedade">
+					<ion-option *ngFor="let propriedade of propriedades | async" [value]="propriedade.propriedadenome">{{propriedade.propriedadenome}}</ion-option>
+				</ion-select>
+			</ion-item>
+
+			<ion-item>
+				<button ion-button outline block>Salvar</button>
+			</ion-item>
+
+		</form>
+
+	</ion-list>
+</ion-content>

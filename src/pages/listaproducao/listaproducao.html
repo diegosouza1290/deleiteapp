@@ -1,0 +1,35 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-buttons end>
+			<button ion-button icon-only (click)="cadastroproducao()">
+			<ion-icon name="add"></ion-icon>
+      </button>
+		</ion-buttons>
+		<ion-title align="center">Minha Produção</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-item *ngFor="let producao of lista | async" (click)="editarproducao(producao.id)">
+
+			<h2>Lote de Produção: {{producao.lote}}</h2>
+			<table>
+				<tr>
+					<td>
+						<p *ngIf="producao.litroleite">Total Produção: {{producao.litroleite}} litros</p>
+						<p *ngIf="!producao.litroleite">Total Produção: (Não cadastrado)</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<p *ngIf="producao.data" displayFormat="DD/MM/YYYY">Data: {{producao.data}}</p>
+					</td>
+				</tr>
+			</table>
+		</ion-item>
+
+	</ion-list>
+
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-title>Cadastrar Propriedade</ion-title>
+
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<form #form="ngForm" (ngSubmit)="salvar(form)">
+
+			<ion-item>
+				<ion-label floating>Propriedade</ion-label>
+				<ion-input type="text" name="propriedadenome" ngModel></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Responsável</ion-label>
+				<ion-input type="text" name="responsavel" ngModel></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Município</ion-label>
+				<ion-input type="text" name="municipio" ngModel></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label floating>Área</ion-label>
+				<ion-input type="text" name="area" ngModel></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<button ion-button outline block>Salvar</button>
+			</ion-item>
+
+		</form>
+
+	</ion-list>
+</ion-content>

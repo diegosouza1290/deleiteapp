@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-navbar color="secondary">
+		<ion-buttons end>
+			<button ion-button icon-only (click)="cadastrovacinas()">
+			<ion-icon name="add"></ion-icon>
+      </button>
+		</ion-buttons>
+		<ion-title>Vacinas</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list>
+
+		<ion-item *ngFor="let vacinas of lista | async">
+
+			<h2>Vacina: {{vacinas.descricaovm}}</h2>
+			<table id="tabelaspec">
+				<tr>
+					<td>
+						<p *ngIf="vacinas.tipo">Tipo: {{vacinas.tipo}}</p>
+						<p *ngIf="!vacinas.tipo">Tipo: (Não Cadastrada)</p>
+					</td>
+				</tr>
+
+			</table>
+		</ion-item>
+
+	</ion-list>
+</ion-content>
