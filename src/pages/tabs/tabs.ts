@@ -3,6 +3,7 @@ import { HomePage } from '../homepage/homepage';
 import { ListaAnimal } from '../listaanimal/listaanimal';
 import { Menu } from '../menu/menu';
 import { ListaProducao } from '../listaproducao/listaproducao';
+import { ListaDespesas } from '../listadespesas/listadespesas';
 
 @Component({
   selector: 'app-tabs',
@@ -13,8 +14,8 @@ export class Tabs {
   rootPage: any = HomePage;
 
   tab1 = HomePage;
-  tab2 = ListaProducao;
-  tab3 = ListaAnimal;
+  tab2 = ListaAnimal;
+  tab3 = ListaDespesas;
   tab4 = Menu;
 
   constructor() { }

@@ -14,17 +14,17 @@
 
 		<ion-item *ngFor="let producao of lista | async" (click)="editarproducao(producao.id)">
 
-			<h2>Lote de Produção: {{producao.lote}}</h2>
+			<h2 align="center">Lote de Produção: {{producao.lote}}</h2>
 			<table>
 				<tr>
 					<td>
-						<p *ngIf="producao.litroleite">Total Produção: {{producao.litroleite}} litros</p>
-						<p *ngIf="!producao.litroleite">Total Produção: (Não cadastrado)</p>
+						<p  align="center"*ngIf="producao.litroleite">Total Produção: {{producao.litroleite}} litros</p>
+						<p  align="center"*ngIf="!producao.litroleite">Total Produção: (Não cadastrado)</p>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<p *ngIf="producao.data" displayFormat="DD/MM/YYYY">Data: {{producao.data}}</p>
+						<p  align="center"*ngIf="producao.data" displayFormat="DD/MM/YYYY">Data: {{producao.data}}</p>
 					</td>
 				</tr>
 			</table>

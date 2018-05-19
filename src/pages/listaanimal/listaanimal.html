@@ -14,13 +14,13 @@
 
 		<ion-item *ngFor="let animal of lista | async" (click)="editaranimal(animal.id)">
 
-			<h2>Nome do Animal: {{animal.nome}}</h2>
+			<h2 align="center">Nome do Animal: {{animal.nome}}</h2>
 
-			<p *ngIf="animal.categoria">Estágio: {{animal.categoria}}</p>
-			<p *ngIf="!animal.categoria">Estágio: (Não Cadastrado)</p>
+			<p  align="center" *ngIf="animal.categoria">Estágio: {{animal.categoria}}</p>
+			<p  align="center" *ngIf="!animal.categoria">Estágio: (Não Cadastrado)</p>
 
-			<p *ngIf="animal.raca">Raça: {{animal.raca}}</p>
-			<p *ngIf="!animal.raca">Raça: (Não Cadastrada)</p>
+			<p align="center" *ngIf="animal.raca">Raça: {{animal.raca}}</p>
+			<p align="center" *ngIf="!animal.raca">Raça: (Não Cadastrada)</p>
 
 		</ion-item>
 

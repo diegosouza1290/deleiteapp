@@ -5,7 +5,7 @@
 			<ion-icon name="add"></ion-icon>
       </button>
 		</ion-buttons>
-		<ion-title>Estágios</ion-title>
+		<ion-title align="center">Estágios</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -13,7 +13,7 @@
 	<ion-list>
 
 		<ion-item *ngFor="let categoria of lista | async" (click)="editarcategoria(categoria.id)">
-			<h2>Estágio: {{categoria.descricaocategoria}}</h2>
+			<h2 align="center">Estágio: {{categoria.descricaocategoria}}</h2>
 		</ion-item>
 
 	</ion-list>

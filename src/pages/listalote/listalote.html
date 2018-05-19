@@ -5,7 +5,7 @@
 			<ion-icon name="add"></ion-icon>
       </button>
 		</ion-buttons>
-		<ion-title>Lotes</ion-title>
+		<ion-title align="center">Lotes</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -13,7 +13,7 @@
 	<ion-list>
 
 		<ion-item *ngFor="let lote of lista | async" (click)="editarlote(lote.id)">
-			<h2>Lote: {{lote.descricaolote}}</h2>
+			<h2 align="center">Lote: {{lote.descricaolote}}</h2>
 		</ion-item>
 
 	</ion-list>

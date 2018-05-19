@@ -5,7 +5,7 @@
 			<ion-icon name="add"></ion-icon>
       </button>
 		</ion-buttons>
-		<ion-title>Minhas Propriedades</ion-title>
+		<ion-title align="center">Minhas Propriedades</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -14,24 +14,24 @@
 
 		<ion-item *ngFor="let propriedade of lista | async" (click)="editarpropriedade(propriedade.id)">
 
-			<h2>Propriedade: {{propriedade.propriedadenome}}</h2>
+			<h2 align="center">Propriedade: {{propriedade.propriedadenome}}</h2>
 			<table>
 				<tr>
 					<td>
-						<p *ngIf="propriedade.responsavel">Responsável: {{propriedade.responsavel}}</p>
-						<p *ngIf="!propriedade.responsavel">Responsável: (Não Cadastrada)</p>
+						<p  align="center"*ngIf="propriedade.responsavel">Responsável: {{propriedade.responsavel}}</p>
+						<p  align="center"*ngIf="!propriedade.responsavel">Responsável: (Não Cadastrada)</p>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<p *ngIf="propriedade.municipio">Município: {{propriedade.municipio}}</p>
-						<p *ngIf="!propriedade.municipio">Município: (Não Cadastrado)</p>
+						<p  align="center"*ngIf="propriedade.municipio">Município: {{propriedade.municipio}}</p>
+						<p  align="center"*ngIf="!propriedade.municipio">Município: (Não Cadastrado)</p>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<p *ngIf="propriedade.area">Área: {{propriedade.area}} ha</p>
-						<p *ngIf="!propriedade.area">Área: (Não Cadastrada)</p>
+						<p  align="center"*ngIf="propriedade.area">Área: {{propriedade.area}} ha</p>
+						<p  align="center"*ngIf="!propriedade.area">Área: (Não Cadastrada)</p>
 					</td>
 				</tr>
 			</table>

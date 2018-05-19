@@ -5,7 +5,7 @@
 			<ion-icon name="add"></ion-icon>
       </button>
 		</ion-buttons>
-		<ion-title>Vacinas</ion-title>
+		<ion-title align="center">Vacinas</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -14,12 +14,12 @@
 
 		<ion-item *ngFor="let vacinas of lista | async">
 
-			<h2>Vacina: {{vacinas.descricaovm}}</h2>
+			<h2 align="center">Vacina: {{vacinas.descricaovm}}</h2>
 			<table id="tabelaspec">
 				<tr>
 					<td>
-						<p *ngIf="vacinas.tipo">Tipo: {{vacinas.tipo}}</p>
-						<p *ngIf="!vacinas.tipo">Tipo: (Não Cadastrada)</p>
+						<p  align="center"*ngIf="vacinas.tipo">Tipo: {{vacinas.tipo}}</p>
+						<p  align="center"*ngIf="!vacinas.tipo">Tipo: (Não Cadastrada)</p>
 					</td>
 				</tr>
 

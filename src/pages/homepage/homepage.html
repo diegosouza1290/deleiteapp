@@ -1,36 +1,25 @@
 <ion-header>
 	<ion-navbar color="secondary">
-		<ion-title align="center">Início</ion-title>
+		<ion-title align="center">Indicadores de Produção</ion-title>
 	</ion-navbar>
-
 </ion-header>
 
 <ion-content>
 	<ion-list>
 
-		<ion-card>
+		<ion-item *ngFor="let producao of lista | async">
 
-			<ion-item *ngFor="let propriedade of lista1 | async">
-
-				<h2 align="center">Propriedade: {{propriedade.propriedadenome}}</h2>
-
-			</ion-item>
-
-			<ion-item *ngFor="let animal of lista | async">
-
-				<p align="center" *ngIf="animal.id">Total de Animais: {{animal.nome}} animais</p>
-				<p align="center" *ngIf="!animal.id == null">(Não há animais cadastrados!)</p>
-
-			</ion-item>
-
-			<ion-item *ngFor="let producao of lista2 | async">
-
-				<p align="center" *ngIf="producao.id">Total Produção: {{producao.contador}} litros</p>
-				<p align="center" *ngIf="!producao.id">(Não há produção!)</p>
-
-			</ion-item>
-
-		</ion-card>
+			<h2 align="center" *ngIf="producao.data" displayFormat="DD/MM/YYYY">{{producao.data}}</h2>
+			<table align="center">
+				<tr>
+					<td>
+						<p *ngIf="producao.litroleite">Total Produção: {{producao.litroleite}} litros</p>
+						<p *ngIf="!producao.litroleite">Total Produção: (Não cadastrado)</p>
+					</td>
+				</tr>
+			</table>
+		</ion-item>
 
 	</ion-list>
+
 </ion-content>

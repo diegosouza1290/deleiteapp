@@ -28,7 +28,7 @@ export class CadastroProducao {
   salvar(form: NgForm) {
 
     let lote: string = form.value.lote;
-    let data: Date = new Date();
+    let data: string = new Date().toLocaleDateString();
     let litroleite: string = form.value.litroleite;
     let user = this.authService.getUser();
 

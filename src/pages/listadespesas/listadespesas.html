@@ -5,32 +5,32 @@
 			<ion-icon name="add"></ion-icon>
       </button>
 		</ion-buttons>
-		<ion-title>Despesas</ion-title>
+		<ion-title align="center">Despesas</ion-title>
 	</ion-navbar>
 </ion-header>
 
 <ion-content>
 	<ion-list>
 
-		<ion-item *ngFor="let despesas of lista | async" (click)="editardespesas(despesas.id)">
+		<ion-item align="center" *ngFor="let despesas of lista | async" (click)="editardespesas(despesas.id)">
 
-			<h2>Despesa: {{despesas.despesa}}</h2>
-			<table id="tabelaspec">
+			<h2 align="center">Despesa: {{despesas.despesa}}</h2>
+			<table align="center" id="tabelaspec">
 				<tr>
 					<td>
-						<p *ngIf="despesas.descricaodp">Descrição: {{despesas.descricaodp}}</p>
-						<p *ngIf="!despesas.descricaodp">Descrição: (Não Cadastrada)</p>
+						<p align="center"*ngIf="despesas.descricaodp">Descrição: {{despesas.descricaodp}}</p>
+						<p align="center"*ngIf="!despesas.descricaodp">Descrição: (Não Cadastrada)</p>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<p *ngIf="despesas.valor">Valor: R$ {{despesas.valor}}</p>
-						<p *ngIf="!despesas.valor">Descrição: (Não Cadastrado)</p>
+						<p align="center"*ngIf="despesas.valor">Valor: R$ {{despesas.valor}}</p>
+						<p align="center"*ngIf="!despesas.valor">Descrição: (Não Cadastrado)</p>
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<p *ngIf="despesas.data" displayFormat="DD/MM/YYYY">Data: {{despesas.data}}</p>
+						<p align="center"*ngIf="despesas.data" displayFormat="DD/MM/YYYY">Data: {{despesas.data}}</p>
 					</td>
 				</tr>
 

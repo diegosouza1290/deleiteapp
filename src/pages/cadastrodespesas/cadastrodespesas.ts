@@ -20,7 +20,7 @@ export class CadastroDespesas {
   salvar(form: NgForm) {
 
     let despesa: string = form.value.despesa;
-    let data: Date = new Date();
+    let data: string = new Date().toLocaleDateString();
     let descricaodp: string = form.value.descricaodp;
     let valor: string = form.value.valor;
     let user = this.authService.getUser();
